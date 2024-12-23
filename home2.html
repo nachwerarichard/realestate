@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Website</title>
+    <style>
+        /* General reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: #fff;
+        }
+
+        /* Header styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #000;
+        }
+
+        /* Logo styling */
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        /* Menu styling */
+        .menu {
+            display: flex;
+            flex: 1;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            position: relative;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .menu a:hover {
+            color: #ff7f50;
+        }
+
+        /* Button styling */
+        .menu .cta {
+            background-color: #6c63ff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+        }
+
+        .menu .cta:hover {
+            background-color: #4c45d6;
+        }
+
+        /* Section styling */
+        .content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px;
+            gap: 20px;
+        }
+
+        .content .text {
+            flex: 3;
+            color: #fff;
+        }
+
+        .content .text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .content .text p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .content .text .buttons {
+            margin-bottom: 20px;
+        }
+
+        .content .text .buttons a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #6c63ff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-right: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .content .text .buttons a:hover {
+            background-color: #4c45d6;
+        }
+
+        .content .text ul {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .content .text ul li {
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+        }
+
+        .content .text ul li::before {
+            content: "\2713";
+            color: #6c63ff;
+            margin-right: 10px;
+        }
+
+        .content .image {
+            flex: 2;
+        }
+
+        .content .image img {
+            width: 100%;
+            border-radius: 10px;
+        }
+         /* Features section styling */
+         .features {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .features p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: #ccc;
+        }
+
+        .features-container {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .feature-item {
+            text-align: center;
+            flex: 1;
+            background-color: #222;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .feature-item img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 20px;
+        }
+
+        .feature-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .feature-item p {
+            font-size: 1rem;
+            color: #ccc;
+            margin-bottom: 10px;
+        }
+
+        .feature-item .price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #6c63ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .feature-item .price img {
+            width: 20px;
+            height: 20px;
+            align-items:right;
+        }
+        .info-section {
+            display: flex;
+            padding: 50px;
+            gap: 30px;
+        }
+
+        .info-image {
+            flex: 1;
+        }
+
+        .info-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .info-content {
+            flex: 1;
+        }
+
+        .info-content h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .info-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .info-list .list-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .info-list .list-item img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.left {
+  flex: 1;
+  max-width: 50%;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}
+
+.right {
+  flex: 1;
+  max-width: 50%;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+p {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.columns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.column {
+  width: 30%;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 5px 0;
+}
+
+
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">RealEstates</div>
+    <nav class="menu">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Listings</a>
+        <a href="#">Contact</a>
+        <a href="#" class="cta">Get Started</a>
+    </nav>
+</header>
+
+<section class="content">
+    <div class="text">
+        <h1>Your Dream Home Awaits</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod nisi nec nunc aliquet, at luctus libero eleifend.</p>
+        <div class="buttons">
+            <a href="#">Learn More</a>
+            <a href="#">Get Started</a>
+        </div>
+        <ul>
+            <li>Prime locations available</li>
+            <li>Affordable pricing options</li>
+            <li>Expert real estate agents</li>
+            <li>24/7 customer support</li>
+        </ul>
+    </div>
+    <div class="image">
+        <img src="realestatehouse.avif" alt="Dream Home">
+    </div>
+</section>
+<section class="features">
+    <h2>Why Choose Us</h2>
+    <p>Discover the unique benefits of working with our real estate experts.</p>
+    <div class="features-container">
+        <div class="feature-item">
+            <img src="cottage_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png" alt="Feature 1">
+            <h3>Expert Guidance</h3>
+            <p>Our team provides the best advice to help you find your dream home.</p>
+            <div class="price">
+                <img src="price-icon.png" alt="Price Icon">
+                $299</div>
+        </div>
+        <div class="feature-item">
+            <img src="potted_plant_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png" alt="Feature 2">
+            <h3>Flexible Options</h3>
+            <p>We offer a variety of plans to meet your specific needs.</p>
+            <div class="price">
+                <img src="price-icon.png" alt="Price Icon">
+                $499</div>
+        </div>
+        <div class="feature-item">
+            <img src="real_estate_agent_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png" alt="Feature 3">
+            <h3>Seamless Process</h3>
+            <p>Enjoy a smooth and hassle-free property acquisition experience.</p>
+            <div class="price">
+                <img src="price-icon.png" alt="Price Icon">
+                $399</div>
+        </div>
+    </div>
+</section>
+<section class="info-section">
+    <div class="info-image">
+        <img src="peopl02.webp" alt="Information">
+    </div>
+    <div class="info-content">
+        <h2>Comprehensive Services</h2>
+        <p>We provide a range of services to ensure you have a smooth experience, from property searches to finalizing your dream home.</p>
+        <div class="info-list">
+            <div class="list-item">
+                <img src="in_home_mode_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png" alt="Icon 1">
+                <span>Personalized Support</span>
+            </div>
+            <div class="list-item">
+                <img src="home_pin_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png" alt="Icon 2">
+                <span>Expert Advice</span>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="info-section">
+    
+    <div class="info-content">
+        <h2>Comprehensive Services</h2>
+        <p>We provide a range of services to ensure you have a smooth experience, from property searches to finalizing your dream home.</p>
+        <div class="info-list">
+            <div class="columns">
+                <div class="column">
+                  <ul>
+                    <h3>Item</h3>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                    <li>Item 4</li>
+                  </ul>
+                </div>
+                <div class="column">
+                  <ul>
+                    <h3>Item</h3>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                    <li>Item 4</li>
+                  </ul>
+                </div>
+                <div class="column">
+                  <ul>
+                    <h3>Item</h3>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                    <li>Item 4</li>
+                  </ul>
+                </div>
+              </div>
+        </div>
+    </div>
+    <div class="info-image">
+        <img src="people.webp" alt="Information">
+    </div>
+</section>
+
+</body>
+</html>
