@@ -1,0 +1,80 @@
+/* General Reset */
+body, ul, li {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navigation Bar */
+nav ul {
+  display: flex;
+  list-style-type: none;
+  background-color: #333;
+  padding: 10px;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+nav ul li a.active, nav ul li a:hover {
+  color: #ffa500;
+}
+
+/* Section Container */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.left {
+  flex: 1;
+  max-width: 50%;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}
+
+.right {
+  flex: 1;
+  max-width: 50%;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+p {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.columns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.column {
+  width: 30%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  margin: 5px 0;
+}
